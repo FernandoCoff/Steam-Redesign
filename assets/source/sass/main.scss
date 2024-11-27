@@ -1,0 +1,592 @@
+@import './config.scss';
+@import 'popups.scss';
+
+body{
+    background-color: $body-bg-color;
+}
+
+header{
+    background-color: $primaryColor-gb;
+    backdrop-filter: blur(6px);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+main{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 600px;
+}
+
+.navbar{
+    @include d-flex(row);
+    justify-content: space-between;
+    padding: 1rem 5rem;
+}
+
+.left-navbar{
+    @include d-flex(row);
+    gap: 5rem;
+}
+
+.nav-list{
+    @include d-flex(row);
+    gap: 2.5rem;
+    list-style: none;
+    font-size: 1rem;
+}
+
+.nav-link{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $secondaryColor;
+    font-weight: 500;
+    position: relative;
+    font-size: 1.1rem;
+
+    &:hover{
+        color: $tertiaryColor;
+    }
+
+    &:hover::after{
+        content: "";
+        width: 100%;
+        height: 3.5px;
+        background-color: $tertiaryColor;
+        position: absolute;
+        top: 3.05rem;
+        left: 0;
+    }
+}
+
+.right-navbar{
+    @include d-flex(row);
+    gap: 3rem;
+}
+
+.info{
+    @include d-flex(row);
+    gap: 2rem;
+
+    i{
+        cursor: pointer;
+        color:  $secondaryColor;
+        font-size: 1.25rem;
+        transition: 0.4s;
+        width: 2.75rem;
+        height: 2.75rem;
+        @include d-flex(row);
+        border-radius: 50%;
+        position: relative;
+
+        &:hover{
+            background-color: $tertiaryColor;
+            
+        }
+        
+    }
+
+    .notfy{
+        @include d-flex(row);
+        background-color: $tertiaryColor;
+        position: relative;
+        transition: 0.6s;
+    }
+
+    .notfy::after{
+        content: "";
+        width: 0.875rem;
+        height: 0.875rem;
+        background-color: $notfyColor;
+        position: absolute;
+        border-radius: 50%;
+        top: 0.1rem;
+        left: 2rem;
+        transition: 0.3s;
+        opacity: 0;
+    }
+
+    .notfy.active::after{
+        opacity: 1;
+    }
+}
+
+.profile-image{
+    border-radius: 50%;
+    width: 3.25rem;
+    height: 3.25rem;
+    border: 2.5px solid transparent;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.4s;
+
+    img{
+        max-width: 100%;
+        object-fit: cover;
+    }
+
+    &:hover{
+        border: 2.5px solid $tertiaryColor;
+    }
+}
+
+#hero{
+    overflow: hidden;
+    width: 100%;
+    height: 560px;
+    position: absolute;
+}
+
+.slide-group{
+    @include d-flex(row);
+    width: 500%;
+    input{
+        display: none
+    }
+}
+
+.slide-item{
+    position: relative;
+    height: 560px;
+    width: 20%;
+    transition: 0.6s;
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.8;
+    }
+}
+
+.slide-card{
+    position: absolute;
+    color: $secondaryColor;
+    width: 25rem;
+    top: 50%;
+    left: 10%;
+    transform: translate(0, -50%);
+
+
+    h3{
+        font-size: 3rem;
+        font-weight: 500;
+    }
+
+    p{
+        margin-top: 0.5rem;
+        margin-bottom: 2rem;
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    a{
+        color: $secondaryColor;
+        font-size: 1rem;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1rem 2rem;
+        background-color: $tertiaryColor;
+        border-radius: 3px;
+        transition: 0.3s;
+        font-weight: 500;
+
+        &:hover{
+            background-color: darken($tertiaryColor, 5%);
+        }
+    }
+}
+
+.navigation{
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    @include d-flex(row);
+    gap: 2.5rem;
+}
+
+.bullet{
+    width: 0.75rem;
+    height: 0.75rem;
+    border: 2px solid $secondaryColor;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.bullet.active{
+    background-color: $secondaryColor;
+}
+
+#slide1:checked ~ .s1{
+    margin-left: 0;
+
+}
+#slide2:checked ~ .s1{
+    margin-left: -40%;
+}
+
+#slide3:checked ~ .s1{
+    margin-left: -80%;
+}
+
+#slide4:checked ~ .s1{
+    margin-left: -120%;
+}
+#slide5:checked ~ .s1{
+    margin-left: -160%;
+}
+
+.navigation-bar{
+    padding: 2rem 0;
+}
+
+.navigation-list{
+    background-color: $primaryColor-gb;
+    @include d-flex(row);
+    justify-content: space-around;
+    padding: 2rem 1rem;
+    list-style: none;
+
+    li>a{
+        color: $secondaryColor;
+        font-size: 1.1rem;
+        font-weight: 500;
+        text-decoration: none;
+        text-transform: uppercase;
+        position: relative;
+
+        &:hover{
+            color: $tertiaryColor;
+        }
+
+        &:hover::after{
+            content: "";
+            width: 100%;
+            height: 3.5px;
+            background-color: $tertiaryColor;
+            position: absolute;
+            top: 3.05rem;
+            left: 0;
+        }
+    }
+}
+
+.search-bar{
+    background-color: $primaryColor-gb;
+    padding: 0.5rem 2.5rem;
+    position: relative;
+    margin-bottom: 2rem;
+    
+
+    i{
+        color: $tertiaryColor;
+        font-size: 1.2rem;
+        position: absolute;
+        cursor: pointer;
+        top: 50%;
+        transform: translate(0, -50%);
+        right: 2.5rem;
+    }
+
+    input{
+        width: 100%;
+        padding: 0.5rem 0rem;
+        background-color: transparent;
+        border: transparent;
+        font-size: 1.1rem;
+        color: $secondaryColor;
+
+        &:focus{
+            outline: none;
+        }
+    }
+}
+
+#links{
+    padding: 2rem 0rem;
+
+}
+
+.link-list{
+    @include d-flex(row);
+    width: 100%;
+    gap: 2rem;
+}
+
+.primary-btn{
+    flex-grow: 1;
+    text-align: center;
+    color: $secondaryColor;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 0rem;
+    background-color: $tertiaryColor;
+    border-radius: 3px;
+    transition: 0.3s;
+    font-weight: 500;
+
+    &:hover{
+        background-color: darken($tertiaryColor, 5%);
+    }
+}
+
+.title-section{
+    color: $secondaryColor;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+
+.catalog-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+    height: 100%;  
+}
+
+.catalog-item{
+    max-height: 500px;
+    overflow: hidden;
+
+    img{
+        max-width: 100%;
+        opacity: 0.7;
+        transition: 0.4s;
+        cursor: pointer;
+
+        &:hover{
+            opacity: 1;
+        }
+        
+    }
+}
+
+.category-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.category-item{
+    @include d-flex(column);
+    width: 100%;
+    align-items: start;
+
+    img{
+        max-width: 100%;
+        opacity: 0.7;
+        transition: 0.3s;
+        cursor: pointer;
+
+        &:hover{
+            opacity: 1;
+        }
+    }
+
+    h4{
+        font-size: 1.1rem;
+        color: $secondaryColor;
+        font-weight: 500;
+        padding: 1rem 0;
+        text-transform: uppercase;
+    }
+
+    .info{
+        @include d-flex(row);
+        color: $secondaryColor;
+        font-weight: 500;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+
+        .discount{
+            background-color: $tertiaryColor;
+            padding: 0.25rem 0.5rem;
+            border-radius: 3px;
+        }
+
+        .price-origin{
+            opacity: 0.6;
+            text-decoration: line-through
+        }
+
+    }
+
+    button{
+        width: 100%;
+        color: $secondaryColor;
+        background-color: $tertiaryColor;
+        border: none;
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 0.75rem;
+        cursor: pointer;
+        border-radius: 3px;
+        transition: 0.3s;
+
+        &:hover{
+            background-color: darken($tertiaryColor, 5%)
+        }
+    }
+}
+
+#buyOn{
+    margin-top: 3rem;
+}
+
+.buyOn-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.content-sd{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+
+.card{
+    @include d-flex(column);
+    align-items: start;
+
+    background-color: $primaryColor;
+
+    .image{
+        width: 100%;
+        height: 400.8px;
+    }
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        opacity: 0.8;
+        transition: 0.3s;
+        cursor: pointer;
+
+        &:hover{
+            opacity: 1;
+        }
+    }
+    
+    small{
+        padding: 0rem 2rem;
+        font-size: 0.875rem;
+        color: $secondaryColor;
+        opacity: 0.5;
+        font-weight: 400;
+    }
+
+    h3{
+        margin-top: 2rem;
+        padding: 0rem 2rem;
+        color: $secondaryColor;
+        font-weight: 500;
+        font-size: 2rem;
+    }
+
+    .info{
+        @include d-flex(row);
+        color: $secondaryColor;
+        font-weight: 500;
+        font-size: 1rem;
+        padding: 1rem 2rem;
+    }
+
+        .discount{
+            background-color: $tertiaryColor;
+            padding: 0.25rem 0.5rem;
+            border-radius: 3px;
+        }
+
+        .price-origin{
+            opacity: 0.6;
+            text-decoration: line-through
+        }
+}
+
+.card.sd{
+
+    .image{
+        width: 100%;
+        height: 160px;
+    }
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    small{
+        margin-top: 1rem;
+    }
+}
+
+footer{
+    @include d-flex(column);
+    align-items: start;
+    margin-top: 4rem;
+    padding: 2rem;
+    background-color: $primaryColor;
+    gap: 1rem;
+
+    .ft-1{
+        @include d-flex(row);
+        width: 100%;
+
+        a{
+            text-decoration: none;
+            font-size: 1.1rem;
+            color: $tertiaryColor;
+        }
+    }
+
+    .ft-2{
+        @include d-flex(row);
+        align-items: start;
+        gap: 5rem;
+        width: 100%;
+    }
+
+    div{
+        display: flex;
+        flex-direction: column;
+
+        h5{
+            color: $tertiaryColor;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        a{
+            text-decoration: none;
+            color: $secondaryColor;
+            opacity: 0.6;
+            font-weight: 400;
+            font-size: 0.875rem;
+            transition: 0.3s;
+            margin-bottom: 0.25rem;
+
+            &:hover{
+                opacity: 1;
+            }
+        }
+    }
+}
+
+
+
+@import "tablet.scss";
+@import 'mobile.scss'; 

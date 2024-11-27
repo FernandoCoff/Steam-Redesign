@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/build/css/main.css">
+    <link rel="shortcut icon" href="https://efront-steam.vercel.app/assets/image/logo-steam.svg" type="image/png">
+    <script src="assets/source/js/main.js" defer></script>
+    <script src="https://kit.fontawesome.com/cc5f700981.js" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <title>Steam (Redesign)</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="left-navbar">
+                <div class="logo">
+                    <img src="https://efront-steam.vercel.app/assets/image/logo-steam.svg" alt="Steam Incon">
+                </div>
+                <ul class="nav-list">
+                    <li><a href="#" class="nav-link">Loja</a></li>
+                    <li><a href="#" class="nav-link">Biblioteca</a></li>
+                    <li><a href="#" class="nav-link">Comunidade</a></li>
+                    <li><a href="#" class="nav-link">Suporte</a></li>
+                </ul>
+            </div>
+            <div class="right-navbar">
+                <div class="info">
+                    <i class="notfy fa-regular fa-bell" id="bell"></i>
+                    <i class="fi fi-rr-shopping-bag active" id="cart"></i>
+                </div>
+                <div class="profile-image">
+                    <img src="assets/source/img/Profile-Photo.png" alt="profile user image">
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section id="hero">
+        <div class="slide-group">
+            <input type="radio" class="radio" id="slide1" name="slide-item" checked>
+            <input type="radio" class="radio" id="slide2" name="slide-item">
+            <input type="radio" class="radio" id="slide3" name="slide-item">
+            <input type="radio" class="radio" id="slide4" name="slide-item">
+            <input type="radio" class="radio" id="slide5" name="slide-item">
+            <div class="slide-item s1">
+                <img src="assets/source/img/slide-1.png" alt="Imagem">
+                <div class="slide-card">
+                    <h3>God Of War</h3>
+                    <p>God of War Ragnarok é marcado pelo climax entre Kratos, Atreus e seus aliados contra os deuses de Asgard. O grupo se reúne com exércitos de outros reinos para uma batalha épica contra os Aesir, o verdadeiro Ragnarok.</p>
+                    <a href="#">Assistir Trailer</a>
+                </div>
+            </div>
+            <div class="slide-item">
+                <img src="assets/source/img/slide-2.png" alt="Imagem">
+                <div class="slide-card">
+                    <h3>Call Of Duty</h3>
+                    <p>Black Ops 6 continua a narrativa alucinante do universo Black Ops com uma nova Campanha que se passa no início dos anos 1990. Neste suspense de ação e espionagem.</p>
+                    <a href="#">Compre Agora</a>
+                </div>
+            </div>
+            <div class="slide-item">
+                <img src="assets/source/img/slide-3.png" alt="Imagem">
+                <div class="slide-card">
+                    <h3>Forza Horizon</h3>
+                    <p>Forza Horizon 5 é o mais novo game de corrida da Microsoft que chega exclusivamente para Xbox e PC. O jogo traz disputas em algumas das mais belas localidades do México e conta com centenas de carros, desafios e novos recursos de acessibilidade que prometem viabilizar a diversão para todos.</p>
+                    <a href="#">Demo Grátis</a>
+                </div>
+            </div>
+            <div class="slide-item">
+                <img src="assets/source/img/slide-4.png" alt="Imagem">
+                <div class="slide-card">
+                    <h3>Assasin's Creed</h3>
+                    <p>Assassin's Creed é uma franquia de jogos desenvolvida pela Ubisoft, a qual narra a história de assassinos profissionais em uma rivalidade milenar contra outro grupo, chamado de Templários.</p>
+                    <a href="#">Saiba Mais</a>
+                </div>
+            </div>
+            <div class="slide-item">
+                <img src="assets/source/img/slide-5.png" alt="Imagem">
+                <div class="slide-card">
+                    <h3>Resident Evil</h3>
+                    <p>Um remake de Resident Evil 4 (2005), os jogadores controlam o agente americano Leon S. Kennedy, que deve salvar Ashley Graham, filha do presidente dos Estados Unidos, do misterioso culto Los Illuminados. O remake tem um enredo atualizado, novos visuais, personagens, elenco e jogabilidade alterada.</p>
+                    <a href="#">Pré Venda</a>
+                </div>
+            </div>
+        </div>
+        <div class="navigation">
+            <label class="bullet" for="slide1" id="bullet1"></label>
+            <label class="bullet" for="slide2" id="bullet2"></label>
+            <label class="bullet" for="slide3" id="bullet3"></label>
+            <label class="bullet" for="slide4" id="bullet4"></label>
+            <label class="bullet" for="slide5" id="bullet5"></label>
+        </div>
+    
+    </section>
+    <main>
+        <nav>
+            <div class="navigation-bar">
+                <ul class="navigation-list">
+                    <li><a href="#" class="navigation-link">Novidades e tendências</a></li>
+                    <li><a href="#" class="navigation-link">Categorias</a></li>
+                    <li><a href="#" class="navigation-link">Lojas de Pontos</a></li>
+                    <li><a href="#" class="navigation-link">Notícias</a></li>
+                    <li><a href="#" class="navigation-link">Laboratório</a></li>
+                </ul>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="search" placeholder="BUSCAR JOGOS">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </nav>
+
+        <section id="catalog">
+            <h2 class="title-section">Você precisa Jogar</h2>
+            <div class="catalog-container">
+                <div class="catalog-item">
+                    <img src="assets/source/img/ct1.png" alt="catalog img">
+                </div>
+                <div class="catalog-item">
+                    <img src="assets/source/img/ct2.png" alt="catalog img">
+                </div>
+                <div class="catalog-item">
+                    <img src="assets/source/img/ct3.png" alt="catalog img">
+                </div>
+                <div class="catalog-item">
+                    <img src="assets/source/img/ct4.png" alt="catalog img">
+                </div>
+            </div>
+        </section>
+
+        <section id="links">
+            <h2 class="title-section">Navegar Pela Steam</h2>
+            <ul class="link-list">
+                <a href="#" class="primary-btn">Lançamentos</a>
+                <a href="#" class="primary-btn">Ofertas</a>
+                <a href="#" class="primary-btn">Jogos Gratuitos</a>
+                <a href="#" class="primary-btn">Mais vendidos</a>
+            </ul>
+        </section>
+
+        <section id="category">
+            <h2 class="title-section">Melhores Avaliados</h2>
+            <div class="category-container">
+                <div class="category-item">
+                    <!--gerado com JS-->
+                </div>
+            </div>
+        </section>
+
+        <section id="buyOn">
+            <h2 class="title-section">Ofertas do dia</h2>
+            <div class="buyOn-container">
+                <div class="card 1">
+                    <div class="image">
+                        <img src="assets/source/img/promo1.png" alt="game image">
+                    </div>
+                    <h3>Call Of Duty</h3>
+                    <small>Promoção válida até 16 de Janeiro</small>
+                    <div class="info">
+                        <span class="discount">45%</span>
+                        <span class="price-origin">R$ 100,00</span>
+                        <span class="price-actual">R$ 55,00</span>
+                    </div>
+                </div>
+                <div class="card 1">
+                    <div class="image">
+                        <img src="assets/source/img/promo3.png" alt="game image">
+                    </div>
+                    <h3>Resident Evil</h3>
+                    <small>Promoção válida até 16 de Janeiro</small>
+                    <div class="info">
+                        <span class="discount">50%</span>
+                        <span class="price-origin">R$ 150,00</span>
+                        <span class="price-actual">R$ 75,00</span>
+                    </div>
+                </div>
+                <div class="content-sd">
+                    <div class="card sd">
+                        <div class="image sd">
+                            <img src="assets/source/img/promo2.png" alt="game image">
+                        </div>
+                        <small>Promoção válida até 16 de Janeiro</small>
+                        <div class="info">
+                            <span class="discount">70%</span>
+                            <span class="price-origin">R$ 100,00</span>
+                            <span class="price-actual">R$ 30,00</span>
+                        </div>
+                    </div>
+                    <div class="card sd">
+                        <div class="image sd">
+                            <img src="assets/source/img/promo4.png" alt="game image">
+                        </div>
+                        <small>Promoção válida até 16 de Janeiro</small>
+                        <div class="info">
+                            <span class="discount">100%</span>
+                            <span class="price-origin">R$ 90,00</span>
+                            <span class="price-actual">R$ 00,00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="ft-2">
+            <div class="part-1">
+                <h5>Categorias</h5>
+                <a href="#">Mais vendidos</a>
+                <a href="#">Novidades</a>
+                <a href="#">Próximos lançamentos</a>
+                <a href="#">Promoçoes</a>
+                <a href="#">Jogos de R.V</a>
+                <a href="#">Compatíveis com comando</a>
+                <a href="#">Exelentes no Deck</a>    
+            </div>
+            <div class="part-2">
+                <h5>Ver por Gênero</h5>
+                <a href="#">Grátis para jogar</a>
+                <a href="#">Acesso antecipado</a>
+                <a href="#">Aventura</a>
+                <a href="#">Ação</a>
+                <a href="#">Casual</a>
+                <a href="#">Corridas</a>
+            </div>
+            <div class="part-3">
+                <h5>Recomendações</h5>
+                <a href="#">De amigos</a>
+                <a href="#">De curadores</a>
+                <a href="#">Marcadores</a>
+            </div>
+            <div class="part-4">
+                <h5>Create By Fernando Coff</h5>
+                <a href="#">LinkedIn</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+                <a href="#">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="popup-container" id="popupContainer">
+        <div class="popup" id="addItem">
+            <div class="popup-icon">
+                <i class="fi fi-br-shopping-cart-check"></i>
+            </div>
+            <button class="popup-btn-close" id="addItemClose">
+                <i class="fi fi-rs-circle-xmark"></i>
+            </button>
+            <h2 class="popup-title">Item adiconado ao carrinho</h2>
+            <div class="popup-btn">
+                <button class="popup-secondary-btn" id="addItemContine">Continuar comprando</button>
+                <button class="popup-primary-btn" id="btn-open-cart">Finalizar compra</button>
+            </div>
+        </div>
+        <div class="popup" id="finish">
+            <button class="popup-btn-close" id="finishClose">
+                <i class="fi fi-rs-circle-xmark"></i>
+            </button>
+            <div class="popup-icon">
+                <i class="fi fi-br-shopping-cart-check"></i>
+            </div>
+            <h2 class="popup-title">Compra Finalizada com Sucesso</h2>
+        </div>
+    </div>
+
+    <div class="cart" id="cartOpen">
+        <h2>Carrinho de compras</h2>
+        <ul class="items" id="items">
+
+        </ul>
+        <div class="total">
+            <span class="text">total</span>
+            <span class="totalPrice" id="TotalPrice">R$ 00,00</span>
+        </div>
+        <button id="checkout">Finalizar compra</button>
+    </div>
+</body>
+</html> 

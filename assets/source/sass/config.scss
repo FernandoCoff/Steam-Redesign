@@ -1,0 +1,26 @@
+// FONTE
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+// RESET 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+// VARIÁVEIS
+$primaryColor: #1b2838e0;
+$primaryColor-gb: #1b2838;
+$tertiaryColor: #0094ff;
+$secondaryColor: #eee;
+$secondaryColorOp: #eeeeee5b;
+$notfyColor: #acff2fde;
+$body-bg-color: #0e131e;
+
+// MIXINS
+@mixin d-flex($flex-d){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: $flex-d;
+}

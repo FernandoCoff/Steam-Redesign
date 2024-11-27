@@ -1,0 +1,234 @@
+.popup-container{
+    background-color: #202020c0;
+    backdrop-filter: blur(3px);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all 0.3s;
+    z-index: -1;
+    opacity: 0;
+    
+
+    .popup{
+        @include d-flex(column);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.4);
+        background-color: $primaryColor-gb;
+        padding: 2.5rem;
+        width: 40%;
+        height: 35vh;
+        transition: all 0.5s;
+        z-index: -1;
+        opacity: 0;
+        
+
+
+        .popup-icon{
+            background-color: $tertiaryColor;
+            padding: 1rem;
+            border-radius: 50%;
+            @include d-flex(row);
+            i{
+                @include d-flex(row);
+                color: $secondaryColor;
+                font-size: 1.5rem;
+            }
+
+        }
+
+        .popup-btn-close{
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background-color: transparent;
+            border: none;
+
+            i{
+                cursor: pointer;
+                font-size: 1rem;
+                padding-block: 2rem;
+                color: $secondaryColor;
+                opacity: 0.7;
+            }
+        }
+
+        .popup-title{
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: $tertiaryColor;
+            margin-bottom: 1.5rem;
+        }
+
+        .popup-btn{
+            @include d-flex(row);
+            width: 100%;
+            justify-content: space-around;
+        }
+
+        .popup-secondary-btn{
+            width: 40%;
+            padding: 0.75rem;
+            border: 2px solid $tertiaryColor;
+            border-radius: 3px;
+            background-color: transparent;
+            color: $tertiaryColor;
+            font-weight: 500;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: 0.3s;
+
+            &:hover{
+                background-color: $tertiaryColor;
+                color: $secondaryColor;
+            }
+        }
+        .popup-primary-btn{
+            width: 40%;
+            padding: 0.75rem 2.1rem;
+            border: 2px solid $tertiaryColor;
+            border-radius: 3px;
+            background-color: $tertiaryColor;
+            color: $secondaryColor;
+            font-weight: 500;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: 0.3s;
+
+            &:hover{
+                background-color: darken($tertiaryColor, 5%);
+            }
+        }
+        
+    }
+}
+
+.popup-container.opened{
+    z-index: 2;
+    opacity: 1;
+
+    .popup.opened{
+        z-index: 1;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.cart{
+    padding-top:116px;
+    padding-bottom: 32px;
+    padding-left: 32px;
+    padding-right: 32px;
+    position: fixed;
+    top: 0;
+    right: -30%;
+    z-index: 0;
+    width: 30%;
+    height: 100vh;
+    transition: all .45s;
+    background-color: $primaryColor-gb;
+    @include d-flex(column);
+    justify-content: flex-start;
+    
+
+    h2{
+        margin-bottom: 1.5rem;
+        color: $tertiaryColor;
+        text-transform: uppercase;
+        font-size: 1.875rem;
+        font-weight: 500;
+    }
+
+    ul{
+        @include d-flex(column);
+        width: 100%;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        
+    }
+
+    li{
+        list-style: none;
+        @include d-flex(row);
+        justify-content: space-between;
+        width: 100%;
+        border-bottom: 1px solid $secondaryColorOp;
+        padding: 0.5rem 0rem;
+
+        h4, span{
+            font-size: 1rem;
+            font-weight: 500;
+            color: $secondaryColor;
+            text-transform: uppercase;
+        }
+
+        .image{
+            @include d-flex(row);
+            border-radius: 50%;
+            width: 75px;
+            height: 75px;
+            overflow: hidden;
+        }
+        img{
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            object-position: center;
+        }
+    }
+
+    .total{
+        @include d-flex(column);
+        width: 100%;
+        align-items: start;
+        padding: 1.5rem 0;
+
+        .text{
+            width: 100%;
+            font-weight: 500;
+            text-transform: uppercase;
+            border-bottom: 2px solid $tertiaryColor;
+            padding: 0.5rem 0rem;
+            font-size: 1rem;
+            color: $secondaryColor;
+        }
+
+        .totalPrice{
+            font-weight: 500;
+            text-transform: uppercase;
+            margin: 0.5rem 0;
+            font-size: 1.5rem;
+            color: $secondaryColor;
+        }
+    }
+
+    button{
+            width: 100%;
+            padding: 1rem 2rem;
+            border: 2px solid $tertiaryColor;
+            border-radius: 3px;
+            background-color: $tertiaryColor;
+            color: $secondaryColor;
+            font-weight: 500;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.3s;
+
+            &:hover{
+                background-color: darken($tertiaryColor, 5%);
+            }
+    }
+}
+
+.cart.opened{
+    right: 0;
+}
